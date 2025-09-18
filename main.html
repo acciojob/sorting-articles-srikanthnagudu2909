@@ -7,7 +7,7 @@
 </head>
 <body>
   <h2>Articles List</h2>
-  <ul id="bands"></ul>
+  <ul id="band"></ul>
 
   <script>
     const bands = [
@@ -32,7 +32,7 @@
       return stripArticle(a).localeCompare(stripArticle(b));
     });
 
-    const bandList = document.getElementById('bands');
+    const bandList = document.getElementById('band');
     bandList.innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
   </script>
 </body>
