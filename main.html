@@ -7,7 +7,7 @@
 </head>
 <body>
   <h2>Articles List</h2>
-  <ul id="band"></ul>
+  <ul id="bands"></ul>
 
   <script>
     const bands = [
@@ -25,19 +25,14 @@
       'Anywhere But Here', 
       'An Old Dog'
     ];
-
-    // Function to remove 'a', 'an', 'the' from start
     function stripArticle(name) {
       return name.replace(/^(a |an |the )/i, '').trim();
-    }
-
-    // Sort ignoring articles
+    
     const sortedBands = bands.sort((a, b) => {
       return stripArticle(a).localeCompare(stripArticle(b));
     });
 
-    // Display in the list
-    const bandList = document.getElementById('band');
+    const bandList = document.getElementById('bands');
     bandList.innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
   </script>
 </body>
